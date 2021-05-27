@@ -1,0 +1,207 @@
+<?php
+$path = 'px.php';
+$px = $_GET['px'];
+
+
+$lines = file($path);
+
+if(strlen($lines[1]) <= 1) {
+    unset($lines[0]);
+    file_put_contents($path, implode('', $lines));
+    $file_data = '<?php $px = "'.$px.'" ?>'.PHP_EOL;
+    $file_data .= file_get_contents($path);
+    file_put_contents($path, $file_data);
+} else {
+    $spaceline = PHP_EOL;
+    $spaceline .= file_get_contents($path);
+    file_put_contents($path, $spaceline);
+    $file_data = '<?php $px = "'.$px.'" ?>'.PHP_EOL;
+    $file_data .= file_get_contents($path);
+    file_put_contents($path, $file_data);
+}
+
+?>
+<!DOCTYPE html>
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <base href=".">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="assets/icona.css">
+
+
+<!--    {snippet:aw_gtag}-->
+<!--    {snippet:aw_conversion}-->
+<!--    {snippet:fbpixel}-->
+</head>
+<body class="papperlord">
+
+<!--{snippet:depth}-->
+
+<div class="papperlord__wrupper">
+
+    <h1 class="title papperlord__forever">
+        <img src="assets/n1.png" class="forever__getter" alt="получай подарки!">
+        <img src="assets/n11.png" class="forever__getter forever__getter_line" alt="получай подарки!">
+    </h1>
+    <div class="chikkens-bg">
+        <div class="chikkens-bg__koleso">
+            <div class="koleso koleso_animated">
+                <div class="koleso__shadow"></div>
+                <div class="koleso__holder">
+                    <img src="assets/n9.png" alt="" class="koleso__spinner" style="transform: rotate(-45deg); transform-origin: 50% 50%;">
+                    <div class="koleso__win-frame"></div>
+                    <div class="koleso__button-holder koleso__button-holder_blinking">
+                        <button class="round-button koleso__button spuner">Spin</button>
+                    </div>
+                </div>
+                <div class="koleso__lamps lamps"></div>
+            </div>
+        </div>
+        <div class="chikkens-bg__panel">
+            <div class="chetchek"><span class="chetchek__text">Attempts left:</span><span class="chetchek__value">2</span></div>
+            <div class="maladca">
+                <div class="maladca__item maladca__item_empty maladca__item_animated"></div>
+                <div class="maladca__item maladca__item_empty maladca__item_animated"></div></div>
+        </div>
+        <div class="chikkens-bg__decoration chikkens-bg__decoration_mushrooms"></div>
+        <div class="chikkens-bg__decoration chikkens-bg__decoration_stars"></div>
+        <div class="chikkens-bg__decoration chikkens-bg__decoration_gonzo"></div>
+    </div>
+</div>
+<div class="papperlord__footer">
+    <div class="oplati-white"></div>
+</div>
+<div class="modalochka" id="modal-content">
+    <div class="modalochka__body" id="level-1">
+        <div class="modalochka__content">
+            <div class="winerochek">
+                <div class="winerochek__body">
+                    <h2 class="winerochek__forever">Congratulations!</h2>
+                    <p class="winerochek__you-win">You won</p>
+                    <p class="winerochek__text-group">
+                        <strong class="winerochek__value winerochek__accent" style="font-size: 36px;">475$ BONUS</strong><br>
+
+                    </p>
+                    <span class="button winerochek__button spuner">Spin more</span>
+                </div>
+                <div class="winerochek__lamps lamps"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modalochka__body" id="level-2">
+        <div class="modalochka__content">
+            <div class="winerochek">
+                <div class="winerochek__body">
+                    <h2 class="winerochek__forever">Congratulations!</h2>
+                    <p class="winerochek__you-win">
+                        You win
+                    </p>
+                    <div class="maladca maladca_inline winerochek__maladca">
+                        <div class="maladca__item">
+                            <img src="assets/n17.png" alt="+100%" class="maladca__badge">
+
+                        </div>
+                        <div class="style-plus">
+                            +
+                        </div>
+
+                        <div class="maladca__item">
+                            <img src="assets/n16.png" alt="200 спинов" class="maladca__badge">
+
+                        </div>
+                    </div>
+                    <p style="font-size: 21px;font-weight: 600;">JUST FOR CA5$</p>
+
+                    <a href="https://ntw.casca2.space/?utm_campaign=1VxoKVhwxN&" onclick="gtag_report_conversion(); fbq('track','InitiateCheckout');" target="_blank" class="button winerochek__button">Claim your reward!</a>
+                </div>
+                
+                <div class="winerochek__lamps lamps"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="maladca maladca_hidden">
+    <div class="maladca__item maladca__item_empty"></div>
+    <div class="maladca__item">
+        <img src="assets/n17.png" alt="" class="maladca__badge">
+        <p class="maladca__description"></p>
+    </div>
+    <div class="maladca__item">
+        <img src="assets/n16.png" alt="" class="maladca__badge">
+        <p class="maladca__description"></p>
+    </div>
+</div>
+<script src="assets/bis.js"></script>
+<script src="assets/dep.js"></script>
+
+<script>
+                            $(document).ready(function () {
+                    
+                    
+                                var currentUrl = document.location.href;
+                    
+                                var res = currentUrl.split(document.location.protocol+'//'+document.location.host+document.location.pathname+'?');
+                    
+                                console.log(res);
+                                var keywords = res[1].split('&');
+                                console.log(keywords);
+                                var te8 = '';
+                                var matchtype = '',
+                                    keyw = '',
+                                    placement = '',
+                                    device = '',
+                                    devicemodel = '',
+                                    creative = '',
+                                    banner = '',
+                                    gclid = '',
+                                    campaignid = '';
+                                for (let key of keywords) {
+                                    if(key.split('=')[0] == 'utm_term') {
+                                        var te8 = te8 + key + '&';
+                                    }
+                                    if(key.split('=')[0] == 'utm_content') {
+                                        // var te8 = te8 + 'placement=' + key.split('=')[1] + '&';
+                                        var te8 = te8 + key + '&';
+                                    }
+                                    if(key.split('=')[0] == 'utm_medium') {
+                                        var te8 = te8 + key + '&';
+                    
+                                    }
+                                    if(key.split('=')[0] == 'ad_id') {
+                                        var te8 = te8 + key + '&';
+                    
+                                    }
+                                    if(key.split('=')[0] == 'px') {
+                                        var te8 = te8 + key + '&';
+                    
+                                    }
+                                    if(key.split('=')[0] == 'adgroupid') {
+                                        var te8 = te8 + key + '&';
+                    
+                                    }
+                                    if(key.split('=')[0] == 'banner') {
+                                        var te8 = te8 + key + '&';
+                    
+                                    }
+                                    if(key.split('=')[0] == 'gclid') {
+                                        var te8 = te8 + key + '&';
+                    
+                                    }
+                                    if(key.split('=')[0] == 'campaignid') {
+                                        var te8 = te8 + key + '&';
+                    
+                                    }
+                                    if(key.split('=')[0] == 'acc') {
+                                        var te8 = te8 + key + '&';
+                    
+                                    }
+                    
+                                }
+                                var te9 = $('a').attr('href');
+                                console.log(te9);
+                                $('a').attr('href',te9 + te8);
+                            });
+                    
+</script>
+
+</body></html>
